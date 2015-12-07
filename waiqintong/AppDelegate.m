@@ -36,7 +36,7 @@
 @property (strong, nonatomic) NSArray *userInfoArray;
 @property (assign, nonatomic) Boolean isUploadSuccess;
 
-@property (nonatomic, strong) AMapSearchAPI *search;
+@property (strong, nonatomic) AMapSearchAPI *search;
 @end
 
 @implementation AppDelegate
@@ -132,7 +132,8 @@
    
 }
 
-//实现逆地理编码的回调函数
+#pragma mark - 逆地理编码,获取定时上传的坐标点,用户当前位置
+
 - (void)onReGeocodeSearchDone:(AMapReGeocodeSearchRequest *)request response:(AMapReGeocodeSearchResponse *)response {
     __weak AppDelegate *wAppself = self;
     
@@ -144,53 +145,6 @@
     
     [wAppself uploadRecordLocation];
 }
-
-#pragma mark - 获取定时上传的坐标点,用户当前位置
-
-//- (void)AddWZCJLocation {
-//    
-//    __weak AppDelegate *wAppself = self;
-//
-//    [self saveNowDate];//记录当前时间
-//     self.amaplocationManager = [[AMapLocationManager alloc] init]; //初始化一次定位
-//    [self.amaplocationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters]; //精确度100米
-//    [self.amaplocationManager setPausesLocationUpdatesAutomatically:NO]; //后台不停止更新位置
-//    [self.amaplocationManager setAllowsBackgroundLocationUpdates:YES]; //适配iOS9要加上这句
-//    
-//    //逆地理位置
-//    [self.amaplocationManager requestLocationWithReGeocode:YES completionBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
-//        
-//        if (error)
-//        {
-//            NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
-//        }
-//        
-//        if (location) {
-//            if (regeocode)
-//            {
-//                NSLog(@"reGeocode:%@", regeocode);
-//                self.wz = [NSString stringWithFormat:@"%@", regeocode.formattedAddress];
-//        
-//                [self.timeLocationsArray addObject:location];
-//                
-//                self.tempLatitude  =  [NSNumber numberWithDouble:location.coordinate.latitude];
-//                self.tempLongitude =  [NSNumber numberWithDouble:location.coordinate.longitude];
-//        
-//                self.searchLatitude  = location.coordinate.latitude;
-//                self.searchLongitude = location.coordinate.longitude;
-//                
-////                NSLog(@"self.searchLatitude  %@",self.tempLatitude);
-////                NSLog(@"self.searchLongitude %@",self.tempLongitude);
-//                
-////                AppDelegate * appSelf = wAppself;
-////                [appSelf uploadRecordLocation];
-//              
-//                  [wAppself uploadRecordLocation];
-//            }
-//        }
-//        
-//    }];
-//}
 
 #pragma mark - MALocationManager Delegate
 
@@ -280,7 +234,7 @@
     
 }
 
-#pragma mark - 点击下班时候，保存定时上传的全部数据:经纬度数组，是否上传标志，所在位置，保存时间，用于历史轨迹查询
+#pragma mark - 点击下班时候,保存定时上传的全部数据:经纬度数组,是否上传标志,所在位置,保存时间,用于历史轨迹查询
 
 - (void)saveUploadDataAction {
     

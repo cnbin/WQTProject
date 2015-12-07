@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
+    <entity name="AddKQXXModel" syncable="YES">
+        <attribute name="bumen" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isAddKQXXSuccess" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lx" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="poi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="tp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wz" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="x" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="TimerUploadModel" syncable="YES">
+        <attribute name="bumen" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isupload" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wz" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="x" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="UserInformationModel" syncable="YES">
+        <attribute name="activeTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="department" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="efence" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emailsStr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groupName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idNumber" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="jiaoSe" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="poiFW" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serils" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="trueName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userPwd" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wzCJJG" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zaiGang" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zhiWei" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="WzcLocationModel" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="wzcLocObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WzcLocObjectModel" inverseName="locations" inverseEntity="WzcLocObjectModel" syncable="YES"/>
+    </entity>
+    <entity name="WzcLocObjectModel" syncable="YES">
+        <attribute name="bumen" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="timestring" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wz" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="locations" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="WzcLocationModel" inverseName="wzcLocObject" inverseEntity="WzcLocationModel" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AddKQXXModel" positionX="-18" positionY="81" width="128" height="195"/>
+        <element name="TimerUploadModel" positionX="-45" positionY="0" width="128" height="150"/>
+        <element name="UserInformationModel" positionX="9" positionY="90" width="128" height="285"/>
+        <element name="WzcLocationModel" positionX="0" positionY="54" width="128" height="105"/>
+        <element name="WzcLocObjectModel" positionX="9" positionY="162" width="128" height="135"/>
+    </elements>
+</model>

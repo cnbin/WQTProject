@@ -1,0 +1,67 @@
+//
+//  PrefixHeader.pch
+//  waiqintong
+//
+//  Created by Apple on 11/9/15.
+//  Copyright © 2015 cnbin. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#define Width  self.view.frame.size.width
+#define Height self.view.frame.size.height
+
+
+#define webserviceURL    @"http://192.168.20.5:10089/DWTong/Webservice/MobileService.asmx"
+
+//#define webserviceURL    @"http://192.168.20.5:10089/DWTong/Webservice/MobileService.asmx"
+
+//#define waiWebserviceURL @"http://218.204.229.5:10089/DWTong/Webservice/MobileService.asmx"
+
+
+#define MainSystemThemeColor [UIColor colorWithRed:0 green:199.0f/255.0f blue:140.0f/255.0f alpha:1.0f]
+
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
+#define PATH_OF_DOCUMENT    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import <MAMapKit/MAMapKit.h>
+#import <AMapLocationKit/AMapLocationKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
+#import "MBProgressHUD.h"
+#import "NSString+URLEncoding.h"
+#import "Toast+UIView.h"
+
+#import "UIColor+FlatUI.h"
+#import "UISlider+FlatUI.h"
+#import "UIStepper+FlatUI.h"
+#import "UITabBar+FlatUI.h"
+#import "UINavigationBar+FlatUI.h"
+#import "FUIButton.h"
+#import "FUISwitch.h"
+#import "UIFont+FlatUI.h"
+#import "FUIAlertView.h"
+#import "UIBarButtonItem+FlatUI.h"
+#import "UIProgressView+FlatUI.h"
+#import "FUISegmentedControl.h"
+#import "UIPopoverController+FlatUI.h"
+#import "NSString+Icons.h"
+
+#import "AppDelegate.h"
+#import "Reachability.h"
+#import "GlobalResource.h"
+#import "AFNetworking.h"
+#import <PureLayout/PureLayout.h>
+#import "NSDate+CupertinoYankee.h"
+#import "MagicalRecord.h"
+
+#endif
